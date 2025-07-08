@@ -9,7 +9,7 @@ namespace Game.Modules.PlayerModule.Scripts.SoConfigs {
         [field: SerializeField] public float Deceleration { get; private set; }
         [field: SerializeField] public float TargetOnDeceleration { get; private set; }
         [field: SerializeField] public float MinAccelerationDistance { get; private set; }
-        [field: SerializeField] public float VelocityToMovingAnimation { get; private set; }
+        [field: SerializeField] public float SpeedToMovingAnimation { get; private set; }
         [field: SerializeField] public float RunAnimationFrequency { get; private set; }
         [field: SerializeField] public float WalkAnimationFrequency { get; private set; }
     }

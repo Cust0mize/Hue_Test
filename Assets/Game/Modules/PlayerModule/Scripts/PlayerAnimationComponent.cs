@@ -16,11 +16,10 @@ namespace Game.Modules.PlayerModule.Scripts {
         [SerializeField] private AnimationReferenceAsset _aimAnimation;
 
         private AnimationState AnimationState => _skeleton.AnimationState;
-        private float AbsMoveXPosition => _playerMovementRules.AbsCurrentSpeed;
+        private float AbsCurrentSpeed => _playerMovementRules.AbsCurrentSpeed;
 
         private PlayerAnimationService _playerAnimationService;
         private PlayerMovementSettings _playerMovementSettings;
-        private BasePlayerAnimation _currentMovementAnimation;
         private SpineAnimationService _spineAnimationService;
         private PlayerAimController _playerAimController;
         private PlayerMovementRules _playerMovementRules;
@@ -73,16 +72,12 @@ namespace Game.Modules.PlayerModule.Scripts {
 
         private void UpdateAnimation() {
             BasePlayerAnimation newMovementAnimation = GetDesiredMovementState(out AnimationReferenceAsset targetAnimation);
-
-            if (_currentMovementAnimation != newMovementAnimation) {
-                _playerAnimationService.PlayAnimation<RunningPlayerAnimation>(_playerMovementSettings, _spineAnimationService, AnimationState, transform, _isLeftDirection, targetAnimation);
-                _currentMovementAnimation = newMovementAnimation;
-            }
+            _playerAnimationService.PlayAnimation<RunningPlayerAnimation>(_playerMovementSettings, _spineAnimationService, AnimationState, transform, _isLeftDirection, targetAnimation);
         }
 
         private BasePlayerAnimation GetDesiredMovementState(out AnimationReferenceAsset targetAnimation) {
-            if (AbsMoveXPosition > _playerMovementSettings.VelocityToMovingAnimation) {
-                if (AbsMoveXPosition >= _playerMovementSettings.RunThreshold) {
+            if (AbsCurrentSpeed > _playerMovementSettings.SpeedToMovingAnimation) {
+                if (AbsCurrentSpeed >= _playerMovementSettings.RunThreshold) {
                     targetAnimation = _runAnimation;
                     return _playerAnimationService.GetAnimation<RunningPlayerAnimation>();
                 }

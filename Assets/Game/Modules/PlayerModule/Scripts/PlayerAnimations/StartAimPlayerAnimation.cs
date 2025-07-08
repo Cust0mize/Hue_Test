@@ -17,9 +17,9 @@ namespace Game.Modules.PlayerModule.Scripts.PlayerAnimations {
         ) {
             AnimationReferenceAsset targetAnimation = animations[0];
             TrackEntry aimTrack = spineAnimationService.SetAnimationAndGetTrack(animationState, targetAnimation, AIM_ANIMATION_TRACK_INDEX, IDLE_ANIMATION_LOOP);
-            aimTrack.MixBlend = MixBlend.Replace;
+            aimTrack.MixBlend = MixBlend.First;
             aimTrack.AttachmentThreshold = 1;
-            aimTrack.MixDuration = 0.3f;
+            aimTrack.MixDuration = 0f;
             aimTrack.Alpha = 1;
         }
     }

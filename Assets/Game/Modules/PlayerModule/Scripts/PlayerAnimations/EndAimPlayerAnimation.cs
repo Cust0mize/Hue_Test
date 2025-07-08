@@ -15,8 +15,8 @@ namespace Game.Modules.PlayerModule.Scripts.PlayerAnimations {
         Transform parentTransform,
         bool isLeftDirection
         ) {
-            animationState.AddEmptyAnimation(AIM_ANIMATION_TRACK_INDEX, 0.3f, 0);
-            TrackEntry trackIdleAim = animationState.AddEmptyAnimation(AIM_IDLE_TRACK_INDEX, 0.3f, 0);
+            animationState.AddEmptyAnimation(AIM_ANIMATION_TRACK_INDEX, 0.5f, 0.1f);
+            TrackEntry trackIdleAim = animationState.AddEmptyAnimation(AIM_ANIMATION_TRACK_INDEX, 0.5f, 0.1f);
             trackIdleAim.MixBlend = MixBlend.First;
         }
     }

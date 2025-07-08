@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MovementSettings
   m_EditorClassIdentifier: 
   <MaxSpeed>k__BackingField: 6
-  <RunThreshold>k__BackingField: 5
-  <Acceleration>k__BackingField: 20
-  <Deceleration>k__BackingField: 40
+  <RunThreshold>k__BackingField: 3
+  <Acceleration>k__BackingField: 2
+  <Deceleration>k__BackingField: 20
   <TargetOnDeceleration>k__BackingField: 0
   <MinAccelerationDistance>k__BackingField: 0.5
   <VelocityToMovingAnimation>k__BackingField: 0

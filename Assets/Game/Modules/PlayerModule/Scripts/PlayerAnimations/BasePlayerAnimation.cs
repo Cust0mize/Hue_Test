@@ -7,6 +7,7 @@ using UnityEngine;
 namespace Game.Modules.PlayerModule.Scripts.PlayerAnimations {
     public abstract class BasePlayerAnimation {
         protected const int AIM_ANIMATION_TRACK_INDEX = 2;
+
         protected const int AIM_IDLE_TRACK_INDEX = 1;
         protected const int MOVING_TRACK_INDEX = 0;
         protected const float SUBTRAHEND_ON_REVERSE = 1f;
@@ -31,7 +32,7 @@ namespace Game.Modules.PlayerModule.Scripts.PlayerAnimations {
         ) {
             float animationEnd = animationState.GetCurrent(MOVING_TRACK_INDEX).AnimationEnd;
             float frequenceX = parentTransform.position.x * frequence;
-            float amplitude = (frequenceX - Mathf.Floor(frequenceX));
+            float amplitude = frequenceX - Mathf.Floor(frequenceX);
 
             if (isLeftDirection) {
                 amplitude = SUBTRAHEND_ON_REVERSE - amplitude;
