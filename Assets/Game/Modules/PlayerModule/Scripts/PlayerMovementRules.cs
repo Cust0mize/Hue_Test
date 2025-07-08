@@ -1,6 +1,6 @@
+using Game.Modules.PlayerModule.Scripts.SoConfigs;
 using Game.Modules.MovementModule;
 using Game.Modules.InputModule;
-using Game.Modules.PlayerModule.Scripts.SoConfigs;
 using UnityEngine;
 
 namespace Game.Modules.PlayerModule.Scripts {
